@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <% if (code == 404){ %>
+        <title>404 Not Found</title>
+    <% }
+    else if (code == 200 && reply.name != ""){ %>
+        <title>Contact Submmitted</title>
+    <% } %>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://kit.fontawesome.com/6505e56344.js" crossorigin="anonymous"></script>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+    }
+
+    .reply p {
+        margin: 10px 0;
+        font-size: large;
+    }
+
+    .subject {
+        font-weight: bold;
+        color: #333;
+    }
+</style>
+<body>
+    <div class="container" style="display: flex; justify-content: center; margin-top: 50px;">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="error-template">
+                    <% if (code == 404){ %>
+                        <!-- 404 not found -->
+                        <h1>Oops!</h1>
+                        <h2>404 Not Found</h2>
+                        <div class="error-details">
+                            <h4>Sorry, an error has occured, Requested page not found!</h4>
+                        </div>
+                    <% }
+                    else if (code == 200 && reply.name != ""){ %>
+                        <!-- Contact form fininshed -->
+                        <div class="reply">
+                            <p>Dear Mr./Ms. <%=reply.name%>,</p>
+                            <br>
+                            <p>Thank you very much for your email! I have received your message and will respond to you as soon as possible.</p>
+                            <p>Here is the information you provided:</p>
+                            <br>
+                            <p><%=reply.message%></p>
+                            <br>
+                            <br>
+                            <p>If you have any questions or suggestions regarding my portfolio,</p>
+                            <p>please feel free to contact me. I am happy to interact with you!</p>
+                            <br>
+                            <br>
+                            <p>Best regards,</p>
+                            <p>Trinity Chiu</p>
+                        </div>
+                    <% } %>
+                    <!-- Homepage button -->
+                    <div class="error-actions">
+                        <a href="/" class="btn btn-primary btn-lg" style="margin-top: 20px;"><span class="glyphicon glyphicon-home"></span>
+                            Back To Home Page </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
