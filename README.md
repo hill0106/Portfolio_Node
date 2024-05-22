@@ -1,2 +1,5 @@
-# Trinity's Portfolio Website
-![Trinity's Portfolio Website](https://i.ibb.co/bKmkqvs/Portfolio-Home.png)
+# Trinity Chiu's Portfolio Website
+![Trinity's Portfolio Website](public/ICONS/portfolio.png)
+
+##### Check Here:
+https://trinitychiuportfolio.azurewebsites.net
