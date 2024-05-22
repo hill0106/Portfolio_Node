@@ -3,6 +3,7 @@ const app = express();
 const ejs = require("ejs");
 const API = require("./API");
 
+const PORT = process.env.PORT || 3000;
 
 const path = require("path");
 const bodyParser = require("body-parser");
@@ -10,6 +11,7 @@ const bodyParser = require("body-parser");
 //CSS app.use: middleware
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({extended: true}));
+app.set('view engine', 'ejs');
 
 //Routing
 app.get("/", (req,res) => {
@@ -47,6 +49,6 @@ app.get("*", (req, res) => {
 
 
 
-app.listen(3000, () => {
-    console.log("Server is running on 3000.");
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
 });
