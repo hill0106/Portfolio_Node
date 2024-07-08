@@ -612,6 +612,9 @@
     margin-bottom: 5px !important; 
   }
 
+  .col-lg-6 {
+    width: 90% !important; 
+  }
 
   /*---------------------------------------
      RESPONSIVE STYLES              
