@@ -23,7 +23,47 @@
     });
 
     // TESTIMONIALS CAROUSEL
-    $('#testimonials-carousel').owlCarousel({
+    $('#testimonials-carousel1').owlCarousel({
+        loop:true,
+        margin:10,
+        responsiveClass:true,
+        responsive:{
+            0:{
+                items:1,
+            },
+            1200:{
+                items:2,
+            }
+        }
+    })
+    $('#testimonials-carousel3').owlCarousel({
+        loop:true,
+        margin:10,
+        responsiveClass:true,
+        responsive:{
+            0:{
+                items:1,
+            },
+            1200:{
+                items:2,
+            }
+        }
+    })
+    $('#testimonials-carousel4').owlCarousel({
+        loop:true,
+        margin:10,
+        responsiveClass:true,
+        responsive:{
+            0:{
+                items:1,
+            },
+            1200:{
+                items:2,
+            }
+        }
+    })
+
+    $('#testimonials-carousel2').owlCarousel({
         loop:true,
         margin:10,
         responsiveClass:true,
@@ -40,6 +80,24 @@
             }
         }
     })
+
+    // Handle tab switching
+    $('.btn-group .btn').click(function() {
+        const targetCarousel = $(this).data('carousel');
+        
+        // Update button states
+        $('.btn-group .btn').removeClass('active');
+        $(this).addClass('active');
+        
+        // Hide all carousels
+        $('.owl-carousel').hide();
+        
+        // Show selected carousel
+        $(`#${targetCarousel}`).show();
+        
+        // Refresh the carousel
+        $(`#${targetCarousel}`).trigger('refresh.owl.carousel');
+    });
 
     // SMOOTHSCROLL
     $(function() {
